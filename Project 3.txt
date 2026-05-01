@@ -1,0 +1,19 @@
+Project 3
+COS 161
+Calvin Johnson
+
+This application is a command-line To-Do List system implemented in Java. It allows users to create, manage, and organize three distinct types of tasks: Simple, Priority, and Recurring.
+
+Features:
+Task Management
+Task Hierarchy
+Undo System
+Task Processing
+Filtering
+Input Validation
+
+How To Run
+Ensure all .java files are within a directory named todolist
+Compile the files: javac todolist/*.java
+Run the application: java todolist.Main
+Navigate the system using the numbered menu options (1-10)
