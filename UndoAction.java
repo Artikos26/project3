@@ -1,3 +1,5 @@
+/** COS Project 3 - @author Calvin Johnson */
+
 package todolist;
 
 public class UndoAction {
