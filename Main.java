@@ -54,12 +54,31 @@ public class Main {
 	}
 	
 	private static void addTask() {
+		System.out.println("\nSelect Task Type:");
+		System.out.println("1. Simple Task");
+		System.out.println("2. Priority Task");
+		System.out.println("3. Recurring Task");
+		System.out.print("Choice: ");
+		int typeChoice = getIntInput();
+		
 		System.out.print("Enter Title: ");
 		String title = scanner.nextLine();
 		System.out.print("Enter Description: ");
 		String desc = scanner.nextLine();
 		
-		manager.addTask(new SimpleTask(title, desc, LocalDate.now(), 1));
+		int priority = 1;
+		if (typeChoice == 1) {
+			manager.addTask(new SimpleTask(title, desc, LocalDate.now(), priority));
+		} else if (typeChoice == 2) {
+			System.out.print("Enter Priority Level (1-5): ");
+			priority = getIntInput();
+			manager.addTask(new PriorityTask(title, desc, LocalDate.now(), priority));
+		} else if (typeChoice == 3) {
+			System.out.print("Enter Recurrence Pattern (e.g., Daily, Weekly): ");
+			String pattern = scanner.nextLine();
+			manager.addTask(new RecurringTask(title, desc, LocalDate.now(), priority, pattern));
+		}
+		
 		System.out.println("Task added successfully.");
 	}
 	
